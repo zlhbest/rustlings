@@ -3,7 +3,10 @@ trait Licensed {
     // implementors like the two structs below can share that default behavior
     // without repeating the function.
     // The default license information should be the string "Default license".
-    fn licensing_info(&self) -> String;
+    // trait 可以在声明的函数中添加默认实现，这样即使不实现这个函数也不报错
+    fn licensing_info(&self) -> String{
+        "Default license".to_owned()
+    }
 }
 
 struct SomeSoftware {
